@@ -8,18 +8,15 @@ const Footer = () => {
       <div className="container">
         <div className="flex flex-wrap gap-y-12 lg:gap-y-0">
           <div className="w-full lg:w-5/12">
-            <div className="mb-12 max-w-[380px] lg:mb-16">
-              <Link href="/" className="mb-8 inline-flex items-center gap-3">
+            <div className="mb-12 max-w-[460px] lg:mb-16">
+              <Link href="/" className="mb-8 inline-block">
                 <Image
                   src="/images/logo/Artisan_logo.jpg"
                   alt="Artisan Systems"
-                  className="h-10 w-10 rounded object-cover"
-                  width={40}
-                  height={40}
+                  className="mb-8 h-32 w-32 rounded-xl object-cover lg:h-40 lg:w-40 xl:h-48 xl:w-48"
+                  width={192}
+                  height={192}
                 />
-                <span className="text-xl font-medium tracking-tight text-[#ededed]">
-                  ArtisanSystems
-                </span>
               </Link>
               <p className="mb-8 text-base leading-relaxed text-[#a1a1aa]">
                 Building intelligent automations, agentic workflows, and
