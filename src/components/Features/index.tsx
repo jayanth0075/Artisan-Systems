@@ -6,12 +6,12 @@ import ScrollReveal from "../Common/ScrollReveal";
 const Features = () => {
   return (
     <>
-      <section id="features" className="py-16 md:py-20 lg:py-28">
+      <section id="features" className="bg-[#050505] py-16 md:py-20 lg:py-28">
         <div className="container">
           <ScrollReveal direction="up" duration={700}>
             <SectionTitle
-              title="Our Services"
-              paragraph="We deliver end-to-end solutions — from intelligent automations and agentic workflows to modern websites and cutting-edge AI/ML research."
+              title="What we do"
+              paragraph="We deliver end-to-end solutions — from intelligent automations and agentic workflows to modern websites and cutting-edge tech."
               center
             />
           </ScrollReveal>

@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import NewsLatterBox from "./NewsLatterBox";
-import ScrollReveal from "../Common/ScrollReveal";
 
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -30,31 +29,28 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="overflow-hidden py-16 md:py-20 lg:py-28">
+    <section id="contact" className="bg-[#050505] py-16 md:py-20 lg:py-28">
       <div className="container">
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4 lg:w-7/12 xl:w-8/12">
-            <ScrollReveal direction="left" duration={800}>
-            <div
-              className="mb-12 rounded-xl bg-white px-8 py-11 shadow-three dark:bg-gray-dark sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px]"
-            >
-              <h2 className="mb-3 text-2xl font-bold text-black dark:text-white sm:text-3xl lg:text-2xl xl:text-3xl">
+            <div className="mb-12 rounded-xl border border-[#27272a] bg-[#0a0a0a] p-8 sm:p-11 lg:mb-5 lg:p-8 xl:p-11">
+              <h2 className="mb-3 text-2xl font-semibold text-[#ededed] sm:text-3xl lg:text-2xl xl:text-3xl">
                 Get in Touch
               </h2>
-              <p className="mb-12 text-base font-medium text-body-color">
+              <p className="mb-12 text-base text-[#a1a1aa]">
                 Have a project idea or need help with automation, AI, or web development? Reach out and our team will get back to you shortly.
               </p>
 
               {submitted ? (
-                <div className="rounded-lg border border-green-200 bg-green-50 p-8 text-center dark:border-green-800 dark:bg-green-900/20">
-                  <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-green-100 text-green-600 dark:bg-green-900/40">
+                <div className="rounded-lg border border-[#27272a] bg-[#111111] p-8 text-center">
+                  <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-[#18181b] text-[#ededed]">
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
                   </div>
-                  <h3 className="mb-2 text-xl font-bold text-black dark:text-white">Message Sent!</h3>
-                  <p className="text-body-color">Thank you for reaching out. We&apos;ll get back to you shortly.</p>
+                  <h3 className="mb-2 text-xl font-semibold text-[#ededed]">Message Sent!</h3>
+                  <p className="text-[#a1a1aa]">Thank you for reaching out. We&apos;ll get back to you shortly.</p>
                   <button
                     onClick={() => setSubmitted(false)}
-                    className="mt-6 rounded-lg bg-primary px-6 py-2 text-sm font-semibold text-white transition-all duration-300 hover:bg-primary/90"
+                    className="mt-6 rounded-md bg-[#ededed] px-6 py-2.5 text-sm font-medium text-[#050505] transition-colors duration-200 hover:bg-white"
                   >
                     Send Another Message
                   </button>
@@ -68,7 +64,7 @@ const Contact = () => {
                       <div className="mb-8">
                         <label
                           htmlFor="name"
-                          className="mb-3 block text-sm font-medium text-dark dark:text-white"
+                          className="mb-3 block text-sm font-medium text-[#ededed]"
                         >
                           Your Name
                         </label>
@@ -77,7 +73,7 @@ const Contact = () => {
                           name="name"
                           required
                           placeholder="Enter your name"
-                          className="border-stroke w-full rounded-lg border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-hidden transition-colors duration-200 focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
+                          className="w-full rounded-md border border-[#27272a] bg-[#050505] px-6 py-3 text-base text-[#ededed] outline-none transition-colors duration-200 focus:border-[#52525b] focus:bg-[#0a0a0a]"
                         />
                       </div>
                     </div>
@@ -85,7 +81,7 @@ const Contact = () => {
                       <div className="mb-8">
                         <label
                           htmlFor="email"
-                          className="mb-3 block text-sm font-medium text-dark dark:text-white"
+                          className="mb-3 block text-sm font-medium text-[#ededed]"
                         >
                           Your Email
                         </label>
@@ -94,7 +90,7 @@ const Contact = () => {
                           name="email"
                           required
                           placeholder="Enter your email"
-                          className="border-stroke w-full rounded-lg border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-hidden transition-colors duration-200 focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
+                          className="w-full rounded-md border border-[#27272a] bg-[#050505] px-6 py-3 text-base text-[#ededed] outline-none transition-colors duration-200 focus:border-[#52525b] focus:bg-[#0a0a0a]"
                         />
                       </div>
                     </div>
@@ -102,7 +98,7 @@ const Contact = () => {
                       <div className="mb-8">
                         <label
                           htmlFor="message"
-                          className="mb-3 block text-sm font-medium text-dark dark:text-white"
+                          className="mb-3 block text-sm font-medium text-[#ededed]"
                         >
                           Your Message
                         </label>
@@ -111,7 +107,7 @@ const Contact = () => {
                           required
                           rows={5}
                           placeholder="Enter your Message"
-                          className="border-stroke w-full resize-none rounded-lg border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-hidden transition-colors duration-200 focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
+                          className="w-full resize-none rounded-md border border-[#27272a] bg-[#050505] px-6 py-3 text-base text-[#ededed] outline-none transition-colors duration-200 focus:border-[#52525b] focus:bg-[#0a0a0a]"
                         ></textarea>
                       </div>
                     </div>
@@ -119,7 +115,7 @@ const Contact = () => {
                       <button
                         type="submit"
                         disabled={sending}
-                        className="rounded-lg bg-primary px-9 py-4 text-base font-semibold text-white shadow-submit transition-all duration-300 hover:bg-primary/90 hover:shadow-xl hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed dark:shadow-submit-dark"
+                        className="rounded-md bg-[#ededed] px-8 py-3.5 text-base font-medium text-[#050505] transition-colors duration-200 hover:bg-white disabled:cursor-not-allowed disabled:opacity-60"
                       >
                         {sending ? "Sending..." : "Send Message"}
                       </button>
@@ -128,12 +124,9 @@ const Contact = () => {
                 </form>
               )}
             </div>
-            </ScrollReveal>
           </div>
           <div className="w-full px-4 lg:w-5/12 xl:w-4/12">
-            <ScrollReveal direction="right" delay={200} duration={800}>
-              <NewsLatterBox />
-            </ScrollReveal>
+            <NewsLatterBox />
           </div>
         </div>
       </div>

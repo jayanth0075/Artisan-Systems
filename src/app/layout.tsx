@@ -20,10 +20,9 @@ export default function RootLayout({
         <title>Artisan Systems | AI-Powered Automation &amp; Agentic Workflows</title>
         <meta name="description" content="Artisan Systems builds intelligent automations, agentic workflows, websites, and AI/ML research solutions to help businesses grow." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
       </head>
 
-      <body className={`bg-[#FCFCFC] dark:bg-black ${inter.className}`}>
+      <body className={`bg-[#050505] text-[#ededed] antialiased ${inter.className}`}>
         <Providers>
           <div className="isolate">
             <Header />

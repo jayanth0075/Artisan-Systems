@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import ThemeToggler from "./ThemeToggler";
 import menuData from "./menuData";
 
 const Header = () => {
@@ -28,13 +27,12 @@ const Header = () => {
     <header
       className={`header top-0 left-0 z-40 flex w-full items-center transition-all duration-500 ${
         sticky
-          ? "fixed z-9999 border-b border-white/10 bg-white/80 shadow-sm backdrop-blur-xl dark:border-white/5 dark:bg-gray-dark/80"
+          ? "fixed z-[9999] border-b border-[#27272a] bg-[#050505]/90 backdrop-blur-xl"
           : "absolute bg-transparent"
       }`}
     >
       <div className="container">
         <div className="relative flex items-center justify-between">
-          {/* ─── Logo ─── */}
           <div className="shrink-0">
             <Link
               href="/"
@@ -47,44 +45,41 @@ const Header = () => {
                 alt="Artisan Systems"
                 width={40}
                 height={40}
-                className="h-10 w-10 rounded-xl object-cover ring-1 ring-black/5 dark:ring-white/10"
+                className="h-10 w-10 rounded object-cover"
               />
-              <span className="text-xl font-bold tracking-tight text-black dark:text-white">
-                Artisan<span className="text-primary">Systems</span>
+              <span className="text-xl font-medium tracking-tight text-[#ededed]">
+                ArtisanSystems
               </span>
             </Link>
           </div>
 
-          {/* ─── Nav + Actions ─── */}
           <div className="flex items-center gap-8">
-            {/* Mobile toggle */}
             <button
               onClick={navbarToggleHandler}
               id="navbarToggler"
               aria-label="Mobile Menu"
-              className="ring-primary absolute top-1/2 right-4 block -translate-y-1/2 rounded-lg p-2 focus:ring-2 lg:hidden"
+              className="absolute top-1/2 right-4 block -translate-y-1/2 rounded-lg p-2 focus:ring-2 focus:ring-[#52525b] lg:hidden"
             >
               <span
-                className={`relative my-1.5 block h-0.5 w-[26px] rounded-full bg-black transition-all duration-300 dark:bg-white ${
+                className={`relative my-1.5 block h-0.5 w-[26px] bg-[#ededed] transition-all duration-300 ${
                   navbarOpen ? "top-[7px] rotate-45" : ""
                 }`}
               />
               <span
-                className={`relative my-1.5 block h-0.5 w-[26px] rounded-full bg-black transition-all duration-300 dark:bg-white ${
+                className={`relative my-1.5 block h-0.5 w-[26px] bg-[#ededed] transition-all duration-300 ${
                   navbarOpen ? "opacity-0" : ""
                 }`}
               />
               <span
-                className={`relative my-1.5 block h-0.5 w-[26px] rounded-full bg-black transition-all duration-300 dark:bg-white ${
+                className={`relative my-1.5 block h-0.5 w-[26px] bg-[#ededed] transition-all duration-300 ${
                   navbarOpen ? "top-[-8px] -rotate-45" : ""
                 }`}
               />
             </button>
 
-            {/* Nav */}
             <nav
               id="navbarCollapse"
-              className={`navbar absolute right-0 z-30 w-[250px] rounded-xl border border-stroke-stroke/50 bg-white px-6 py-4 shadow-lg duration-300 lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:shadow-none lg:opacity-100 dark:border-stroke-dark/50 dark:bg-dark ${
+              className={`navbar absolute right-0 z-30 w-[250px] rounded-lg border border-[#27272a] bg-[#0a0a0a] px-6 py-4 shadow-lg duration-300 lg:visible lg:static lg:w-auto lg:border-none lg:bg-transparent lg:p-0 lg:shadow-none lg:opacity-100 ${
                 navbarOpen
                   ? "visibility top-full opacity-100"
                   : "invisible top-[120%] opacity-0"
@@ -96,10 +91,10 @@ const Header = () => {
                     {menuItem.path ? (
                       <Link
                         href={menuItem.path}
-                        className={`flex py-2 text-[15px] font-medium tracking-wide transition-colors duration-200 lg:inline-flex lg:py-6 ${
+                        className={`flex py-2 text-sm font-medium tracking-wide transition-colors duration-200 lg:inline-flex lg:py-6 ${
                           currentPath === menuItem.path
-                            ? "text-primary"
-                            : "text-dark/80 hover:text-primary dark:text-white/70 dark:hover:text-white"
+                            ? "text-[#ededed]"
+                            : "text-[#a1a1aa] hover:text-[#ededed]"
                         }`}
                       >
                         {menuItem.title}
@@ -108,7 +103,7 @@ const Header = () => {
                       <>
                         <p
                           onClick={() => handleSubmenu(index)}
-                          className="flex cursor-pointer items-center gap-1 py-2 text-[15px] font-medium tracking-wide text-dark/80 transition-colors duration-200 group-hover:text-primary lg:inline-flex lg:py-6 dark:text-white/70 dark:group-hover:text-white"
+                          className="flex cursor-pointer items-center gap-1 py-2 text-sm font-medium tracking-wide text-[#a1a1aa] transition-colors duration-200 group-hover:text-[#ededed] lg:inline-flex lg:py-6"
                         >
                           {menuItem.title}
                           <svg
@@ -126,7 +121,7 @@ const Header = () => {
                           </svg>
                         </p>
                         <div
-                          className={`submenu relative top-full left-0 rounded-xl border border-stroke-stroke/30 bg-white/95 backdrop-blur-md transition-all duration-300 group-hover:opacity-100 lg:invisible lg:absolute lg:top-[110%] lg:block lg:w-[230px] lg:p-3 lg:opacity-0 lg:shadow-xl lg:group-hover:visible lg:group-hover:top-full dark:border-stroke-dark/30 dark:bg-dark/95 ${
+                          className={`submenu relative top-full left-0 rounded-lg border border-[#27272a] bg-[#0a0a0a] transition-all duration-300 group-hover:opacity-100 lg:invisible lg:absolute lg:top-[110%] lg:block lg:w-[230px] lg:p-3 lg:opacity-0 lg:shadow-xl lg:group-hover:visible lg:group-hover:top-full ${
                             openIndex === index ? "block" : "hidden"
                           }`}
                         >
@@ -134,7 +129,7 @@ const Header = () => {
                             <Link
                               href={submenuItem.path}
                               key={i}
-                              className="block rounded-lg px-4 py-2.5 text-sm font-medium text-dark/80 transition-all duration-200 hover:bg-primary/5 hover:text-primary dark:text-white/70 dark:hover:bg-primary/10 dark:hover:text-white"
+                              className="block rounded-md px-4 py-2.5 text-sm font-medium text-[#a1a1aa] transition-all duration-200 hover:bg-[#18181b] hover:text-[#ededed]"
                             >
                               {submenuItem.title}
                             </Link>
@@ -147,16 +142,13 @@ const Header = () => {
               </ul>
             </nav>
 
-            {/* Actions */}
             <div className="flex items-center gap-3 pr-14 lg:pr-0">
               <Link
                 href="/contact"
-                className="group relative hidden overflow-hidden rounded-full bg-gradient-to-r from-primary to-[#6366f1] px-7 py-2.5 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 md:inline-flex"
+                className="hidden rounded-md bg-[#ededed] px-6 py-2.5 text-sm font-medium text-[#050505] transition-colors duration-200 hover:bg-white md:inline-flex"
               >
-                <span className="relative z-10">Contact Us</span>
-                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-[#6366f1] to-primary transition-transform duration-500 group-hover:translate-x-0" />
+                Contact Us
               </Link>
-
             </div>
           </div>
         </div>
